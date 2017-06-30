@@ -43,7 +43,7 @@ api.add_resource(chompit, '/chompit/')
 
 
 def oledDisplay(line,message):
-    oled.set_pos(line,0)
+    oled.set_pos(%int(line),0)
     oled.write_string(message)
     return 1
 
