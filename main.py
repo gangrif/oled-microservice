@@ -26,16 +26,19 @@ class message(Resource):
 
 class shiftright(Resource):
     def get(self):
-        oled.shift_display(right=True, count=16)
+        result=oled.shift_display(right=True, count=16)
+        return jsonify(result)
 
 class shiftleft(Resource):
     def get(self):
-        oled.shift_display(right=False, count=16)
+        result=oled.shift_display(right=False, count=16)
+        return jsonify(result)
 
 class chompit(Resource):
     def get(self):
-        oled.chompit()
-
+        result=oled.chompit()
+        return jsonify(result)
+        
 api.add_resource(message, '/message/<line>/<message>')
 api.add_resource(shiftright, '/shiftright/')
 api.add_resource(shiftleft, '/shiftleft/')
