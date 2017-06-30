@@ -20,33 +20,31 @@ api = Api(app)
 
 
 class message(Resource):
-    def get(self, message, header):
-        result=oledDisplay(header,message)
+    def get(self, line, message):
+        result=oledDisplay(line,message)
         return jsonify(result)
 
+class shiftright(Resource):
+    def get(self):
+        oled.shift_display(right=True, count=16)
 
-api.add_resource(message, '/message/<header>/<message>') # Route_3
+class shiftleft(Resource):
+    def get(self):
+        oled.shift_display(right=False, count=16)
+
+class chompit(Resource):
+    def get(self):
+        oled.chompit()
+
+api.add_resource(message, '/message/<line>/<message>')
+api.add_resource(shiftright, '/shiftright/')
+api.add_resource(shifleft, '/shiftleft/')
+api.add_resource(chompit, '/chompit/')
 
 
-def oledDisplay(header,message):
-    # if msgType == 'p':
-    #     header = 'Pwned!:'
-    # elif msgType == 'h':
-    #     header = 'Recent host:'
-
-        # if lastDisplay:
-        #     oled.chompit()
-        # else:
-        #     oled.clear_display()
-    # oled.clear_display()
-    oled.chompit()
-    oled.shift_display(right=True, count=16)
-    oled.set_pos(0,0)
-    oled.write_string(header)
-    oled.shift_display(right=False, count=16)
-    oled.set_pos(1,0)
-    tdelay = 0.1
-    oled.write_string(message.center(16), typeomatic_delay=tdelay)
+def oledDisplay(line,message):
+    oled.set_pos(line,0)
+    oled.write_string(message)
     return 1
 
 
