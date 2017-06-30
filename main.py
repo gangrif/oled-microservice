@@ -21,7 +21,7 @@ api = Api(app)
 
 class message(Resource):
     def get(self, line, message):
-        result=oledDisplay(%int(line),message)
+        result=oledDisplay(int(line),message)
         return jsonify(result)
 
 class shiftright(Resource):
