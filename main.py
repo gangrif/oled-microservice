@@ -38,7 +38,7 @@ class chompit(Resource):
 
 api.add_resource(message, '/message/<line>/<message>')
 api.add_resource(shiftright, '/shiftright/')
-api.add_resource(shifleft, '/shiftleft/')
+api.add_resource(shiftleft, '/shiftleft/')
 api.add_resource(chompit, '/chompit/')
 
 
