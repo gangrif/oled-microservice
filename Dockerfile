@@ -8,9 +8,9 @@ RUN pip install flask flask-jsonpify flask-restful
 
 RUN mkdir /service
 
-COPY ../../ledfun.py /service/
-COPY ../../oledtest.py /service/
-COPY ../../main.py /service/
+COPY ./ledfun.py /service/
+COPY ./oledtest.py /service/
+COPY ./main.py /service/
 
 
 
