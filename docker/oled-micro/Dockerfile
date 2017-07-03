@@ -1,10 +1,18 @@
 FROM resin/rpi-raspbian:jessie
 
 RUN apt-get update --fix-missing
-RUN apt-get install python-pip git
+RUN apt-get install python-pip
+
 
 RUN pip install flask flask-jsonpify flask-restful
-RUN git clone git@github.com:gangrif/oled-microservice.git /service
+
+RUN mkdir /service
+
+COPY ../../ledfun.py /service/
+COPY ../../oledtest.py /service/
+COPY ../../main.py /service/
+
+
 
 EXPOSE 5002 
 
