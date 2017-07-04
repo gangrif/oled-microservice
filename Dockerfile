@@ -1,10 +1,10 @@
 FROM resin/rpi-raspbian:jessie
 
 RUN apt-get update --fix-missing
-RUN apt-get install python-pip
+RUN apt-get install python-pip g++ python-dev
 
 
-RUN pip install flask flask-jsonpify flask-restful
+RUN pip install RPi.GPIO flask flask-jsonpify flask-restful
 
 RUN mkdir /service
 
