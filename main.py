@@ -54,13 +54,13 @@ class demo(Resource):
         result=oled.demo()
         return jsonify(result)
 
-api.add_resource(shiftright, '/credits')
-api.add_resource(shiftright, '/demo')
+api.add_resource(credits, '/credits')
+api.add_resource(demo, '/demo')
 api.add_resource(message, '/message/<line>/<message>')
 api.add_resource(shiftright, '/shiftright')
 api.add_resource(shiftleft, '/shiftleft')
-api.add_resource(chompit, '/cls_chompit')
-api.add_resource(chompit, '/cls')
+api.add_resource(cls_chompit, '/cls_chompit')
+api.add_resource(cls, '/cls')
 
 
 def oledDisplay(line,message):
