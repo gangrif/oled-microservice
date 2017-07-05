@@ -29,17 +29,10 @@ That will run the microservice in the foreground.  It will start up on port 5002
 
 # endpoints
 Here is a list of endpoints
-  * /credits
-  ** Display the oled library credits.  (Thanks Carl!)
-  * /demo
-  ** Display a short demo that's built into the OLED library
-  * /cls
-  ** This clears the screen
-  * /cls_chompit
-  ** This clears the screen with a pac-man animation
-  * /shiftright
-  ** Shift the contents of the screen 16 characters right, including off the edge of the screen
-  * /shiftleft
-  ** Shift the contents of the screen 16 characters left, including off the edge of the screen
-  * /message/<line>/<message>
-  ** Write a message to line 0 or 1 of the screen ex. /message/0/Hi%20There will print "Hi There" to line 0 of the screen.
+  * /credits - Display the oled library credits.  (Thanks Carl!)
+  * /demo - Display a short demo that's built into the OLED library
+  * /cls - This clears the screen
+  * /cls_chompit - This clears the screen with a pac-man animation
+  * /shiftright - Shift the contents of the screen 16 characters right, including off the edge of the screen
+  * /shiftleft -Shift the contents of the screen 16 characters left, including off the edge of the screen
+  * /message/<line>/<message> - Write a message to line 0 or 1 of the screen ex. /message/0/Hi%20There will print "Hi There" to line 0 of the screen.
