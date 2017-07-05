@@ -34,15 +34,33 @@ class shiftleft(Resource):
         result=oled.shift_display(right=False, count=16)
         return jsonify(result)
 
-class chompit(Resource):
+class cls-chompit(Resource):
     def get(self):
         result=oled.chompit()
         return jsonify(result)
 
+class cls(Resource):
+    def get(self):
+        result=oled.clear_display()
+        return jsonify(result)
+
+class credits(Resource):
+    def get(self):
+        result=oled.lib_credits()
+        return jsonify(result)
+
+class demo(Resource):
+    def get(self):
+        result=oled.demo()
+        return jsonify(result)
+
+api.add_resource(shiftright, '/credits')
+api.add_resource(shiftright, '/demo')
 api.add_resource(message, '/message/<line>/<message>')
-api.add_resource(shiftright, '/shiftright/')
-api.add_resource(shiftleft, '/shiftleft/')
-api.add_resource(chompit, '/chompit/')
+api.add_resource(shiftright, '/shiftright')
+api.add_resource(shiftleft, '/shiftleft')
+api.add_resource(chompit, '/cls-chompit')
+api.add_resource(chompit, '/cls')
 
 
 def oledDisplay(line,message):
