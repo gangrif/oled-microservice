@@ -38,7 +38,7 @@ class chompit(Resource):
     def get(self):
         result=oled.chompit()
         return jsonify(result)
-        
+
 api.add_resource(message, '/message/<line>/<message>')
 api.add_resource(shiftright, '/shiftright/')
 api.add_resource(shiftleft, '/shiftleft/')
@@ -53,8 +53,8 @@ def oledDisplay(line,message):
 
 
 def main():
-     app.run(host='0.0.0.0', port='5002')
-
+     app.run(host='0.0.0.0', port='5002') # Runs on all interfaces, Change host= to the IP you'd like to bind to if needed
+#     app.run(port='5002') # Runs on localhost
 
 
 
