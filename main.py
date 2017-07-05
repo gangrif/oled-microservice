@@ -34,7 +34,7 @@ class shiftleft(Resource):
         result=oled.shift_display(right=False, count=16)
         return jsonify(result)
 
-class cls-chompit(Resource):
+class cls_chompit(Resource):
     def get(self):
         result=oled.chompit()
         return jsonify(result)
@@ -59,7 +59,7 @@ api.add_resource(shiftright, '/demo')
 api.add_resource(message, '/message/<line>/<message>')
 api.add_resource(shiftright, '/shiftright')
 api.add_resource(shiftleft, '/shiftleft')
-api.add_resource(chompit, '/cls-chompit')
+api.add_resource(chompit, '/cls_chompit')
 api.add_resource(chompit, '/cls')
 
 

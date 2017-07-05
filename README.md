@@ -30,7 +30,7 @@ Here is a list of endpoints
     Display a short demo that's built into the OLED library
   /cls
     This clears the screen
-  /cls-chompit
+  /cls_chompit
     This clears the screen with a pac-man animation
   /shiftright
     Shift the contents of the screen 16 characters right, including off the edge of the screen
